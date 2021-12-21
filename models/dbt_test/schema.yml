@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+    - name: nitesh_source
+      description: "A starter dbt model"
+      database: fivetran_interview_db
+      schema: google_sheets
+      tables:
+          - name: COVID_19_INDONESIA_NITESH_BHARDWAJ
+            
+models:
+    - name: locations
+      columns:
+          - name: ID
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: active_cases
